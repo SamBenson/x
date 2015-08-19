@@ -45,6 +45,7 @@ if ! grep "${domain}" /etc/apache2/sites-enabled >> /dev/null; then
         DocumentRoot ${path}
         ServerName ${domain}
 	${serverAlias}
+	ErrorLog /var/log/apache2/${domain}/error.log
         <Directory ${path}>
                 allow from all
                 Options +Indexes
